@@ -901,7 +901,7 @@ Now connect to the P5 `dqm` machine. Then after setting up the env execute if yo
 
 ```
 cd $HOME
-plotTimeSeries.py --listOfScanDatesOnly --startDate=2017.01.01
+python plotTimeSeries.py --listOfScanDatesOnly --startDate=2017.01.01
 packageFiles4Docker.py --ignoreFailedReads --fileListScurve=/gemdata/<ChamberName>/scurve/listOfScanDates.txt --tarBallName=<ChamberName>_scurves.tar --ztrim=4 --onlyRawData
 ```
 
