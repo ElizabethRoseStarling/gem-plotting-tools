@@ -432,7 +432,7 @@ def fitScanData(treeFileName, isVFAT3=False, calFileName=None, calTuple=None, ge
     from gempython.gemplotting.utils.anautilities import parseCalFile
     from gempython.tools.hw_constants import vfatsPerGemVariant
 
-    nVFATS = vfatsPerGemVariant[gemType]
+    nVFats = vfatsPerGemVariant[gemType]
     # Get the fitter
     if calFileName is not None:
         tuple_calInfo = parseCalFile(calFileName, gemType)
@@ -440,17 +440,17 @@ def fitScanData(treeFileName, isVFAT3=False, calFileName=None, calTuple=None, ge
                 calDAC2Q_m = tuple_calInfo[0],
                 calDAC2Q_b = tuple_calInfo[1],
                 isVFAT3=isVFAT3,
-                nVFATS=nVFATS
+                nVFats=nVFats
                 )
     elif calTuple is not None:
         fitter = ScanDataFitter(
                 calDAC2Q_m = calTuple[0],
                 calDAC2Q_b = calTuple[1],
                 isVFAT3=isVFAT3,
-                nVFATS=nVFATS
+                nVFats=nVFats
                 )
     else:
-        fitter = ScanDataFitter(isVFAT3=isVFAT3, nVFATS=nVFATS)
+        fitter = ScanDataFitter(isVFAT3=isVFAT3, nVFats=nVFats)
         pass
 
     # Read the output data
